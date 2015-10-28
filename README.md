@@ -6,7 +6,7 @@ this blog is powered by:
 
 ## Overview
 
-Hugo is a static site generator written in [Go][].
+Hugo is a static site generator written in [Go]().
 It is optimized for speed, easy use and configurability.
 Hugo takes a directory with content and templates and renders them into a full HTML website.
 
@@ -15,7 +15,7 @@ And you can run Hugo from any directory.
 
 ### Theme
 
-Currently we are using the [starbootstarp-clean-blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog) Theme which has been added as a `git
+Currently we are using the [startbootstrap-clean-blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog) Theme which has been added as a `git
 submodule`. If you want to work on the blog, you will need to use the
 `--recursive` option when you `git clone` this repository.
 
@@ -33,12 +33,14 @@ To add a blog posts to this blog, follow these steps:
 
 1. Open a pull-request on github for peer review of your new post.
 
-## Admin publishing post
+## Publishing updates to Blog
 
-1. Pull latest changes
+1. Pull Updates
 
-1. Run `hugo` to generate the new site in `public/`
+1. If `public/` folder does not exist yet, clone current site to public/ folder: `git submodule add git@github.com:docker-saigon/docker-saigon.github.io public/`
+
+1. Run `hugo` to generate the new site with new content overwriting `public/`
 
 1. Use `./publish.sh` script to push new static site to the `docker-saigon/blog-hugo` repository on github
 
-
+`./publish.sh` will move into the `public/` folder, commit all the changes and push them to the website.
