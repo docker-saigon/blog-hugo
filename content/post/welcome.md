@@ -10,6 +10,9 @@ categories = [
     "Announcements"
 ]
 weight = 10
+
 +++
 
-This is the first post in Docker Saigon Blog. Let's hope everything works as expected
+This is the first post in Docker Saigon Blog. Let's hope everything works as expected.
+
+An interesting article will be coming soon!
