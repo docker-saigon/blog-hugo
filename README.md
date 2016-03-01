@@ -21,6 +21,8 @@ The theme has been added as a `git submodule`.
 If you want to work on the blog, you will need to use the `--recursive` option
 when you `git clone` this repository.
 
+Any changes to the css/js will need to copy the files from the `themes/startbootstrap-clean-blog/static/{css,js}` paths to the `static/{css,js}` path to ensure the changes are not lost when pushing to this repository.
+
 ## Writing a blog post
 
 To add a blog posts to this blog, follow these steps:
@@ -35,7 +37,7 @@ To add a blog posts to this blog, follow these steps:
 
 1. Open a pull-request on github for peer review of your new post.
 
-## Publishing updates to 
+## Publishing updates to the site
 
 1. Pull Updates from origin
 

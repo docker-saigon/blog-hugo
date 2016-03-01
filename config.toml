@@ -18,6 +18,9 @@ copyright = "Code released under the Apache 2.0 license."
   title = "twitter"
   url = "https://twitter.com/docker_saigon"
 [[params.social]]
+  title = "youtube"
+  url = "https://www.youtube.com/channel/UC1t_GbTJudAAK9Wqkg6-uLw"
+[[params.social]]
   title = "github"
   url = "https://github.com/docker-saigon"
 [[params.social]]
@@ -30,6 +33,6 @@ copyright = "Code released under the Apache 2.0 license."
   weight = -200
 
 [[menu.main]]
-  name = "Archives"
+  name = "Archive"
   url = "/post/"
   weight = -180
