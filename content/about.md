@@ -12,6 +12,7 @@ Docker Saigon is the community of Docker users in Ho Chi Minh City, Vietnam.
 ## Where can you find us?
 
 * [Meetup](http://meetup.com/docker-saigon)
+* [SpeakerDeck](https://speakerdeck.com/dockersaigon)
 * [GitHub](http://github.com/docker-saigon)
 * [Youtube](https://www.youtube.com/channel/UC1t_GbTJudAAK9Wqkg6-uLw)
 * [Facebook](http://www.facebook.com/DockerSaigon)

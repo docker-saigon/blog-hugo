@@ -136,6 +136,7 @@ The target of this section is to have a very detailed look into each component i
 
 A higher level overview is available (and was used as a reference) in the [Official Docker documentation](See also: [Understanding the Docker architecture](https://docs.docker.com/engine/understanding-docker/))
 
+UPDATE: See Also [jfrazelle's talk](http://containersummit.io/events/nyc-2016/videos/building-containers-in-pure-bash-and-c) @ container summit February 2016
 ### Kernel Namespaces
 
 Allow you to create isolation of:
@@ -667,6 +668,8 @@ lxc-destroy -n mycontainer
 
 Interesting Read: [Linux Containers without Docker using OverlayFS & Ansible](https://www.hastexo.com/blogs/florian/2016/02/21/containers-just-because-everyone-else/).
 
+the LXC project has been working on a more user-friendly Daemon similar to the Docker daemon called [LXD](https://linuxcontainers.org/lxd/introduction/) since November 2014.
+
 ### Systemd-nspawn
 
 Originally created to debug the Systemd init system, future versions to be more integrated in the core of the OS (the most low-level and minimal approach to make containers native to the OS).
@@ -717,6 +720,7 @@ systemdctl            machinectl            hostnamectl         journalctl
 ```
 
 [see also - Docker without Docker](https://chimeracoder.github.io/docker-without-docker/#18)
+[see also - Rubber Docker Workshop](https://github.com/Fewbytes/rubber-docker) - [Prep Slides](https://docs.google.com/presentation/d/10vFQfEUvpf7qYyksNqiy-bAxcy-bvF0OnUElCOtTTRc/edit#slide=id.g1012f66722_0_8)
 
 ### runC
 
@@ -783,12 +787,14 @@ cd ~
  runc spec
 
  # start the container
- run start test
+ runc start test
 
  # confirm we are now in busybox container
  /bin/busybox
  ps -a 
 ```
+
+Alternatively download image layers from a registry using tianon's script [download-forzen-image-v2.sh](https://github.com/docker/docker/blob/v1.10.3/contrib/download-frozen-image-v2.sh)
 
 Or with `debootstrap` ...
 ```
@@ -800,6 +806,8 @@ cd debian_wheezy
 runc spec
 runc start debian
 ```
+
+You can use post-start hooks (in `config.json`) to call additional binaries/scripts to do things such as set up the virtual bridge and veth pair and iptable rules for your container.
 
 ## Docker API
 
@@ -833,6 +841,9 @@ Many existing platforms already provide orchestration layers and it is advisable
      Uses: [samalba/dockerclient](https://github.com/samalba/dockerclient)
 
      Code: [How this triggers extension reloads using a TTL Cache](https://github.com/ehazlett/interlock/blob/master/server/server.go#L174-L205)
+
+ -   Monitoring with `docker stats` and the API behind it? [cAdvisor?](https://github.com/google/cadvisor/tree/master/container)
+     more about monitoring: https://www.youtube.com/watch?v=sxE1vDtkYps&feature=youtu.be
 
 ### Docker Registry
 
@@ -888,6 +899,23 @@ See [containerd.tools](https://containerd.tools/) - Spinning out the Docker Daem
 Uses [GRPC](http://www.grpc.io/)
 
 > A high performance, open source, general RPC framework that puts mobile and HTTP/2 first.
+
+<!-- 
+See also?: https://github.com/gengo/grpc-gateway & twitter conv: https://twitter.com/kelseyhightower/status/704914665969733633
+The etcd v3 API leverages gRPC for efficient watches and to reduce memory and CPU usage. 
+
+https://twitter.com/hashtag/grpc?src=hash
+https://www.eventbrite.com/e/grpc-community-meetup-tickets-22059237774
+https://coreos.com/blog/gRPC-protobufs-swagger.html
+
+Nice to see protobuf add initial support for Javascript — works in browsers and in node.js. https://github.com/google/protobuf/releases/tag/v3.0.0-beta-2 …
+
+It should also be noted that you can store full JSON/YAML/XML blobs in etcd and consul. Use a single key named app.conf and call it a day.
+
+Now that rkt has reached 1.0 we need to have a talk about container runtimes vs application management platforms.
+
+
+-->
 
 Containerd is the plumbing component that will manage containers in a future version of Docker Engine.
 
