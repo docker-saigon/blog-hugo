@@ -1,7 +1,7 @@
 +++
 categories = ["Internals", "API"]
 date = "2016-02-29T13:59:25+07:00"
-description = "A deep dive into Linux Containers for Engineers interested in the gritty details. "
+description = "A deep dive into Docker for Engineers interested in the gritty details. "
 draft = false
 image = "/img/ship-schematics2.jpg"
 tags = ["lxc", "runc", "containerd", "cgroups", "iptables", "API"]
