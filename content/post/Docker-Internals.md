@@ -5,7 +5,7 @@ description = "A deep dive into Linux Containers for Engineers interested in the
 draft = false
 image = "/img/ship-schematics2.jpg"
 tags = ["lxc", "runc", "containerd", "cgroups", "iptables", "API"]
-title = "Linux Container Internals"
+title = "Docker Internals"
 
 +++
 
@@ -14,6 +14,10 @@ This post was the basis for a joint event with the [grokking engineering](http:/
 The event was centered around DevOps, for our talk Docker Saigon needed to interest an engineering audience with how things tick on the inside of Docker. Audience experience with Docker and Linux operating systems was expected.
 
 Anyone interested to learn more about Docker, Full free hands-on-labs training events are scheduled for 23/24 March. For more details go to [meetup.com/Docker-Saigon](http://www.meetup.com/Docker-Saigon/)
+
+**Update December 2016**
+
+Please follow comments on [Hacker News](https://news.ycombinator.com/item?id=13231154) for corrections.
 
 ## Outline
 
@@ -548,6 +552,8 @@ Each Docker image references a list of read-only layers that represent filesyste
 When the container starts, the Docker engine prepares the rootfs & uses `chroot` for the container filesystem isolation - similar to LXC. One big innovation of the Docker engine was the concept of leveraging Copy-On-Write file systems to significantly speed up the preparation of the rootfs.
 
 ### Copy-On-Write
+
+EDIT: Please read [Hacker News Comments](https://news.ycombinator.com/item?id=13231154) for corrections on some mistakes here.
 
 Before Docker, LXC would create a full copy of FileSystem when creating a container. This would be slow and take up a lot of space
 
