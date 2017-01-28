@@ -4,6 +4,8 @@ content for the [docker-saigon.github.io](http://docker-saigon.github.io) blog, 
 
 ![Hugo](https://raw.githubusercontent.com/spf13/hugo/master/docs/static/img/hugo-logo.png) (v0.14)
 
+HUGO IS AMAZING!
+
 ## Overview
 
 Hugo is a static site generator written in [Go]().
